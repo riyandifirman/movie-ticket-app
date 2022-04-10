@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_line_bluegrey.xml" value="0.178" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_rectangle_bluegrey.xml" value="0.16" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_rectangle_pink.xml" value="0.197" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_choose_seat.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_detail.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_movie_detail.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_onboarding_one.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_onboarding_three.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_onboarding_two.xml" value="0.264" />

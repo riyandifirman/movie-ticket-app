@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movie">
         <activity
+            android:name=".ChooseSeatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MovieDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".onboarding.OnboardingOneActivity"
             android:exported="false" />
         <activity
@@ -19,6 +28,8 @@
             android:name=".onboarding.OnboardingThreeActivity"
             android:exported="false" />
         <activity android:name=".SignInActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".SignUpPhotoscreenActivity" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">

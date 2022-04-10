@@ -20,4 +20,7 @@
     <string name="upload_later">Upload Later</string>
     <string name="welcome">Welcome,\nRiyandi Firman</string>
     <string name="save_continue"><![CDATA[Save & Continue]]></string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="choose_seat">Choose Seat</string>
+    <string name="buy_ticket">Buy Ticket</string>
 </resources>
