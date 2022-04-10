@@ -18,6 +18,7 @@
         <activity
             android:name=".onboarding.OnboardingThreeActivity"
             android:exported="false" />
+        <activity android:name=".SignInActivity" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
