@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Movie</string>
+    <string name="skip_introduction">Skip Introduction</string>
+    <string name="next">Next</string>
+    <string name="start">Start</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="now_playing_desc">Easier to find out which\nmovie is showing</string>
+    <string name="presale">Pre Sale</string>
+    <string name="presale_desc">Dont worry about missing\nthe latest movie updates</string>
+    <string name="cashless">Cashless</string>
+    <string name="cashless_desc">Use e-wallet for easy\ntransactions</string>
+</resources>
