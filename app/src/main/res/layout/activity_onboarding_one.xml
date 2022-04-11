@@ -8,7 +8,7 @@
     tools:context=".onboarding.OnboardingOneActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_skip_intro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -32,7 +32,7 @@
         android:background="@drawable/shape_rectangle_pink"
         android:text="@string/next"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btn_skip_intro"
         app:layout_constraintEnd_toEndOf="parent"
         app:backgroundTint="@color/colorPink"
         app:layout_constraintStart_toStartOf="parent" />
