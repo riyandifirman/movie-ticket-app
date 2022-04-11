@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movie">
         <activity
+            android:name=".CheckoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChooseSeatActivity"
             android:exported="false" />
         <activity
@@ -27,9 +30,9 @@
         <activity
             android:name=".onboarding.OnboardingThreeActivity"
             android:exported="false" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SignUpPhotoscreenActivity" />
+        <activity android:name=".sign.SignInActivity" />
+        <activity android:name=".sign.SignUpActivity" />
+        <activity android:name=".sign.SignUpPhotoscreenActivity" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">

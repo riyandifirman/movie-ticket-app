@@ -1,11 +1,12 @@
-package com.riyandifirman.movie
+package com.riyandifirman.movie.sign
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.riyandifirman.movie.R
 
-class SignInActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
+        setContentView(R.layout.activity_sign_up)
     }
 }
