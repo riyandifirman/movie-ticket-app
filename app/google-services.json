@@ -1,18 +1,27 @@
 {
   "project_info": {
     "project_number": "979046115625",
+    "firebase_url": "https://movie-ticket-b80c0-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "movie-ticket-b80c0",
     "storage_bucket": "movie-ticket-b80c0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:979046115625:android:25a0c2adf187123f836f38",
+        "mobilesdk_app_id": "1:979046115625:android:0eb61bc6cc2584d9836f38",
         "android_client_info": {
           "package_name": "com.riyandifirman.movie"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "979046115625-n33o9eksio3mkj1h6obbht642tdb2q6r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.riyandifirman.movie",
+            "certificate_hash": "1b5be53bcc897a8f78dbabf3e53a91ce4cb411bf"
+          }
+        },
         {
           "client_id": "979046115625-8av6plcnb709qomi1lot4pc1uksv0cft.apps.googleusercontent.com",
           "client_type": 3
