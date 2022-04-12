@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.riyandifirman.movie.R
-import com.riyandifirman.movie.sign.SignInActivity
+import com.riyandifirman.movie.sign.signin.SignInActivity
 
 class OnboardingThreeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
