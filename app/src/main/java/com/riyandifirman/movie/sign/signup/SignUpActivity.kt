@@ -8,8 +8,8 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.database.*
 import com.riyandifirman.movie.R
-import com.riyandifirman.movie.sign.SignUpPhotoscreenActivity
 import com.riyandifirman.movie.sign.signin.User
+import com.riyandifirman.movie.sign.signup.SignUpPhotoscreenActivity
 
 class SignUpActivity : AppCompatActivity() {
 

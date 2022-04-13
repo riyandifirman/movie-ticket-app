@@ -4,8 +4,12 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission-sdk-23 android:name="android.permission.INTERNET"/>
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA"/>
+
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
 
     <application
         android:allowBackup="true"
@@ -37,7 +41,7 @@
             android:exported="false" />
         <activity android:name=".sign.signin.SignInActivity" />
         <activity android:name=".sign.signup.SignUpActivity" />
-        <activity android:name=".sign.SignUpPhotoscreenActivity" />
+        <activity android:name=".sign.signup.SignUpPhotoscreenActivity" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
