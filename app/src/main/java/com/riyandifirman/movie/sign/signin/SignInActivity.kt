@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 import com.riyandifirman.movie.HomeActivity
 import com.riyandifirman.movie.R
-import com.riyandifirman.movie.sign.SignUpActivity
+import com.riyandifirman.movie.sign.signup.SignUpActivity
 import com.riyandifirman.movie.utils.Preferences
 
 

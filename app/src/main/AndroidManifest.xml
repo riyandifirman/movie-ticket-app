@@ -36,7 +36,7 @@
             android:name=".onboarding.OnboardingThreeActivity"
             android:exported="false" />
         <activity android:name=".sign.signin.SignInActivity" />
-        <activity android:name=".sign.SignUpActivity" />
+        <activity android:name=".sign.signup.SignUpActivity" />
         <activity android:name=".sign.SignUpPhotoscreenActivity" />
         <activity
             android:name=".SplashScreenActivity"
