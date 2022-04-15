@@ -39,4 +39,6 @@
     <string name="balance_available">Balance Available</string>
     <string name="history_transaction">History Transaction</string>
     <string name="history">History</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

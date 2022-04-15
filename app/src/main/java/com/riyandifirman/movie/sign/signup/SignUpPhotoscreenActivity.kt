@@ -22,7 +22,7 @@ import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
-import com.riyandifirman.movie.HomeActivity
+import com.riyandifirman.movie.home.HomeActivity
 import com.riyandifirman.movie.R
 import com.riyandifirman.movie.utils.Preferences
 import java.util.*
