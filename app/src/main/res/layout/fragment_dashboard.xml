@@ -9,10 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/shape_background_bluegrey"
-        tools:context=".home.DashboardFragment">
+        tools:context=".home.dashboard.DashboardFragment">
 
         <TextView
-            android:id="@+id/iv_name"
+            android:id="@+id/tv_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -27,7 +27,7 @@
             tools:text="Riyandi Firman"/>
 
         <TextView
-            android:id="@+id/iv_balance"
+            android:id="@+id/tv_balance"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -37,7 +37,7 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
             tools:text="IDR 300.000"/>
 
         <ImageView
@@ -59,7 +59,7 @@
             android:text="@string/now_playing"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_balance" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_balance" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_now_playing"
@@ -86,7 +86,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_coming_soon"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
