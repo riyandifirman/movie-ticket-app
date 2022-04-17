@@ -10,6 +10,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_rectangle_bluegrey.xml" value="0.16" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_rectangle_pink.xml" value="0.197" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_checkout.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_checkout_success.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_choose_seat.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_detail.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_edit_profile.xml" value="0.22826086956521738" />
@@ -17,6 +18,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_movie_detail.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_movie_detail2.xml" value="0.24456521739130435" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_my_wallet.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_onboarding_one.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_onboarding_three.xml" value="0.264" />
@@ -27,8 +29,10 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_splash_screen.xml" value="0.176" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/fragment_ticket.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/row_item_checkout.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/row_item_coming_soon.xml" value="0.4" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/row_item_now_playing.xml" value="0.4" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/row_item_plays.xml" value="0.536" />
       </map>
     </option>
   </component>

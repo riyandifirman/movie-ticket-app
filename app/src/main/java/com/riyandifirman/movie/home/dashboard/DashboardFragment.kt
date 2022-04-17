@@ -1,6 +1,8 @@
 package com.riyandifirman.movie.home.dashboard
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.database.*
+import com.riyandifirman.movie.MovieDetailActivity
 import com.riyandifirman.movie.R
 import com.riyandifirman.movie.model.Movie
 import com.riyandifirman.movie.utils.Preferences
@@ -42,7 +45,6 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         preferences = Preferences(requireActivity().applicationContext)
         mDatabase = FirebaseDatabase.getInstance().getReference("Movie")
 
@@ -68,14 +70,26 @@ class DashboardFragment : Fragment() {
             override fun onDataChange(dataSnapShot: DataSnapshot) {
                 dataList.clear()
                 for (getdataSnapshot in dataSnapShot.children) {
-                    var movie = getdataSnapshot.getValue(Movie::class.java)
+                    var movie = getdataSnapshot.getValue(Movie::class.java!!)
                     dataList.add(movie!!)
                 }
 
-                rv_now_playing.adapter = NowPlayingAdapter(dataList) {
-                }
+                if (dataList.isNotEmpty()) {
+                    rv_now_playing.adapter = NowPlayingAdapter(dataList) {
+                        val intent = Intent(
+                            context,
+                            MovieDetailActivity::class.java
+                        ).putExtra("data", it)
+                        startActivity(intent)
+                    }
 
-                rv_coming_soon.adapter = ComingSoonAdapter(dataList) {
+                    rv_coming_soon.adapter = ComingSoonAdapter(dataList) {
+                        val intent = Intent(
+                            context,
+                            MovieDetailActivity::class.java
+                        ).putExtra("data", it)
+                        startActivity(intent)
+                    }
                 }
             }
 

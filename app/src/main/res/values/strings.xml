@@ -41,4 +41,8 @@
     <string name="history">History</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="view_ticket">View Ticket</string>
+    <string name="ticket_success_desc">Tickets have been purchased\nsuccessfully and enjoy the movie</string>
+    <string name="happy_watching">Happy Watching!</string>
+    <string name="home">Home</string>
 </resources>

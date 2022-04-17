@@ -8,9 +8,9 @@
     tools:context=".MovieDetailActivity">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/iv_poster"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
+        android:layout_height="220dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/poster" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tv_seat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -27,18 +27,18 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_poster" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/tv_genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Comedy, Family, Kids"
+        android:text="Action"
         android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_seat" />
 
     <TextView
         android:id="@+id/textView13"
@@ -46,18 +46,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Storyboard"
         android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_genre" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/tv_desc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Icebox is Kingdom Corporation's port and cold research facility, located on a small Russian island in the Arctic. The secret facility was dedicated to the shipment of various resources, including radianite, uncovering a crashed ancient Japanese ship."
+        android:text="The Avengers must stop Thanos, a mad Titan, and his  army from getting their hands on all the infinity stones.  However, the mad Titan is prepared to go to any lengths  to carry out his insane plan."
         android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,31 +71,61 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Who's Played"
+        android:text="Who’s Played"
         android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_who_played"
         android:layout_width="match_parent"
-        android:layout_height="69dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_choose_seat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/shape_rectangle_pink"
-        android:text="@string/choose_seat"
+        android:text="Choose Seat"
+        android:textColor="@color/white"
         app:backgroundTint="@color/colorPink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_poster"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_white_24" />
+
+    <TextView
+        android:id="@+id/tv_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawableLeft="@drawable/ic_baseline_star_24"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="7"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_seat" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

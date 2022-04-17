@@ -2,14 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.riyandifirman.movie">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission-sdk-23 android:name="android.permission.INTERNET"/>
-    <uses-permission-sdk-23 android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission-sdk-23 android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -19,13 +22,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movie.NoActionBar">
         <activity
-            android:name=".CheckoutActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ChooseSeatActivity"
+            android:name=".checkout.CheckoutSuccessActivity"
             android:exported="false" />
         <activity
             android:name=".MovieDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".checkout.CheckoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".checkout.ChooseSeatActivity"
             android:exported="false" />
         <activity
             android:name=".home.HomeActivity"
