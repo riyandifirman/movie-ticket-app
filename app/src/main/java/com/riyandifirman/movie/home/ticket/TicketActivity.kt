@@ -30,10 +30,14 @@ class TicketActivity : AppCompatActivity() {
 
         rv_checkout.layoutManager = LinearLayoutManager(this)
         dataList.add(Checkout("A3", ""))
-        dataList.add(Checkout("A3", ""))
+        dataList.add(Checkout("A4", ""))
 
         rv_checkout.adapter = TicketAdapter(dataList) {
 
+        }
+
+        iv_back.setOnClickListener {
+            finish()
         }
     }
 }
