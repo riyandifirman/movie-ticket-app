@@ -6,6 +6,7 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.riyandifirman.movie.R
 import com.riyandifirman.movie.home.dashboard.DashboardFragment
+import com.riyandifirman.movie.home.ticket.TicketFragment
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
