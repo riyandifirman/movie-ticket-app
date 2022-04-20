@@ -15,9 +15,11 @@
         android:layout_marginBottom="8dp"
         android:drawableLeft="@drawable/ic_baseline_event_seat_24"
         android:drawablePadding="10dp"
+        android:fontFamily="@font/m_regular"
         android:gravity="center"
         android:text="Seat no C1"
         android:textColor="@color/colorBlue"
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

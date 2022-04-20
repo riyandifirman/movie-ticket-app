@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/iv_poster_image"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +20,8 @@
         android:id="@+id/tv_seat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/m_regular"
         android:gravity="center"
         android:text="Title"
         android:textColor="@color/white"
