@@ -8,8 +8,10 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.database.*
 import com.riyandifirman.movie.R
+import com.riyandifirman.movie.sign.signin.SignInActivity
 import com.riyandifirman.movie.sign.signin.User
 import com.riyandifirman.movie.sign.signup.SignUpPhotoscreenActivity
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -54,6 +56,10 @@ class SignUpActivity : AppCompatActivity() {
             } else {
                 saveUsername (sUsername, sPassword, sName, sEmail)
             }
+        }
+
+        iv_back.setOnClickListener {
+            startActivity(Intent(this@SignUpActivity, SignInActivity::class.java))
         }
     }
 

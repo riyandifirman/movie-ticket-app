@@ -20,7 +20,7 @@
             android:layout_marginEnd="24dp"
             android:fontFamily="@font/m_semi_bold"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,10 +49,10 @@
             android:id="@+id/iv_profile"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginTop="34dp"
             android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_balance"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_name"
             app:srcCompat="@drawable/user_pic" />
 
         <TextView
@@ -71,7 +71,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_now_playing"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"

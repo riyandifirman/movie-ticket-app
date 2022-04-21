@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
-        <item>@font/montserrat</item>
-        <item>@font/montserrat_alternates_thin</item>
+        <item>@font/m_semi_bold</item>
+        <item>@font/m_regular</item>
     </array>
 </resources>
