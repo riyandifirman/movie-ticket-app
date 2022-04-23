@@ -45,4 +45,5 @@
     <string name="ticket_success_desc">Tickets have been purchased\nsuccessfully and enjoy the movie</string>
     <string name="happy_watching">Happy Watching!</string>
     <string name="home">Home</string>
+    <string name="top_up_balance">Top Up Balance</string>
 </resources>

@@ -28,6 +28,9 @@
             android:name=".home.ticket.TicketActivity"
             android:exported="false" />
         <activity
+            android:name=".wallet.MyWalletActivity"
+            android:exported="false" />
+        <activity
             android:name=".checkout.CheckoutSuccessActivity"
             android:exported="false" />
         <activity

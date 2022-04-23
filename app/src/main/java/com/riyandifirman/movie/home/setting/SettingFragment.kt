@@ -1,5 +1,6 @@
 package com.riyandifirman.movie.home.setting
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.riyandifirman.movie.R
 import com.riyandifirman.movie.utils.Preferences
+import com.riyandifirman.movie.wallet.MyWalletActivity
 import kotlinx.android.synthetic.main.fragment_setting.*
 
 /**
@@ -40,6 +42,10 @@ class SettingFragment : Fragment() {
             .load(preferences.getValue("url"))
             .apply(RequestOptions.circleCropTransform())
             .into(iv_profile)
+
+        tv_my_wallet.setOnClickListener{
+            startActivity(Intent(activity, MyWalletActivity::class.java))
+        }
     }
 
 }
