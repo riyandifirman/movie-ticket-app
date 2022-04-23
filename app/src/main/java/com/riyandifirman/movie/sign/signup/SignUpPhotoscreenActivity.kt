@@ -1,6 +1,7 @@
 package com.riyandifirman.movie.sign.signup
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Bitmap
@@ -14,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.karumi.dexter.Dexter
@@ -66,10 +68,14 @@ class SignUpPhotoscreenActivity : AppCompatActivity(), PermissionListener {
                 iv_add.setImageResource(R.drawable.ic_baseline_delete_forever_24)
                 iv_profile.setImageResource(R.drawable.user_pic)
             } else {
-                Dexter.withActivity(this)
-                    .withPermission(android.Manifest.permission.CAMERA)
-                    .withListener(this)
-                    .check()
+//                Dexter.withActivity(this)
+//                    .withPermission(android.Manifest.permission.CAMERA)
+//                    .withListener(this)
+//                    .check()
+
+                ImagePicker.with(this)
+                    .cameraOnly()
+                    .start()
             }
         }
 
@@ -135,20 +141,40 @@ class SignUpPhotoscreenActivity : AppCompatActivity(), PermissionListener {
         Toast.makeText(this, "Hurry? click upload button later", Toast.LENGTH_LONG).show()
     }
 
-    @SuppressLint("MissingSuperCall")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            var bitmap = data?.extras?.get("data") as Bitmap
-            statusAdd = true
+//    @SuppressLint("MissingSuperCall")
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+//            var bitmap = data?.extras?.get("data") as Bitmap
+//            statusAdd = true
+//
+//            filePath = data.getData()!!
+//            Glide.with(this)
+//                .load(bitmap)
+//                .apply(RequestOptions.circleCropTransform())
+//                .into(iv_profile)
+//
+//            btn_save.visibility = View.VISIBLE
+//            iv_add.setImageResource(R.drawable.ic_baseline_delete_forever_24)
+//        }
+//    }
 
-            filePath = data.getData()!!
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            statusAdd = true
+            filePath = data?.data!!
+
             Glide.with(this)
-                .load(bitmap)
+                .load(filePath)
                 .apply(RequestOptions.circleCropTransform())
                 .into(iv_profile)
 
             btn_save.visibility = View.VISIBLE
             iv_add.setImageResource(R.drawable.ic_baseline_delete_forever_24)
+        } else if (resultCode == Activity.RESULT_CANCELED) {
+            Toast.makeText(this, "You haven't done a photo search yet", Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(this, "Failed", Toast.LENGTH_LONG).show()
         }
     }
 }
