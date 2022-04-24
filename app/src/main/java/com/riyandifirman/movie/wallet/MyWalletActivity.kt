@@ -49,5 +49,9 @@ class MyWalletActivity : AppCompatActivity() {
         rv_transaction.adapter = WalletAdapter(dataList){
 
         }
+
+        btn_top_up.setOnClickListener {
+            startActivity(Intent(this@MyWalletActivity, MyWalletTopUpActivity::class.java))
+        }
     }
 }

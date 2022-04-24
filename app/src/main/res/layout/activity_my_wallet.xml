@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/m_medium"
         android:text="@string/history_transaction"
         android:textColor="@color/white"

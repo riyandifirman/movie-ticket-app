@@ -9,6 +9,8 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_eclipse_blue_green.xml" value="0.1965" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_line.xml" value="0.1325" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_line_bluegrey.xml" value="0.178" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_line_pink.xml" value="0.1805" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_line_white.xml" value="0.1805" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_rectangle_blue_grey_left.xml" value="0.2575" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_rectangle_blue_grey_right.xml" value="0.1325" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/drawable/shape_rectangle_bluegrey.xml" value="0.16" />
@@ -26,6 +28,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_movie_detail.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_movie_detail2.xml" value="0.24456521739130435" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_my_wallet.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_my_wallet_top_up.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_onboarding_one.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_onboarding_three.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_onboarding_two.xml" value="0.264" />
@@ -34,6 +37,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_sign_up_photoscreen.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_splash_screen.xml" value="0.176" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_ticket.xml" value="0.4" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/activity_top_up_success.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/fragment_dashboard.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/fragment_setting.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Movie/app/src/main/res/layout/fragment_ticket.xml" value="0.4" />

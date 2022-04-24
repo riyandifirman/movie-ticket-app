@@ -39,11 +39,21 @@
     <string name="balance_available">Balance Available</string>
     <string name="history_transaction">History Transaction</string>
     <string name="history">History</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="view_ticket">View Ticket</string>
     <string name="ticket_success_desc">Tickets have been purchased\nsuccessfully and enjoy the movie</string>
     <string name="happy_watching">Happy Watching!</string>
     <string name="home">Home</string>
     <string name="top_up_balance">Top Up Balance</string>
+    <string name="custom_amount">Custom Amount</string>
+    <string name="quick_options">Quick Options</string>
+    <string name="tv_10k">Rp\n<b>10.000</b></string>
+    <string name="tv_25k">Rp\n<b>25.000</b></string>
+    <string name="tv_50k">Rp\n<b>50.000</b></string>
+    <string name="tv_100k">Rp\n<b>100.000</b></string>
+    <string name="tv_200k">Rp\n<b>200.000</b></string>
+    <string name="tv_500k">Rp\n<b>500.000</b></string>
+    <string name="you_got_it">You Got It!</string>
+    <string name="top_up_success">E-wallet has been\nupdated successfully</string>
+    <string name="view_wallet">View Wallet</string>
 </resources>
