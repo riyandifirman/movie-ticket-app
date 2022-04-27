@@ -36,7 +36,6 @@ class PlaysAdapter(private var data: List<Plays>,
     class LeagueViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val tvTitle: TextView = view.findViewById(R.id.tv_seat)
-
         private val tvImage: ImageView = view.findViewById(R.id.iv_poster_image)
 
         fun bindItem(data: Plays, listener: (Plays) -> Unit, context : Context, position : Int) {

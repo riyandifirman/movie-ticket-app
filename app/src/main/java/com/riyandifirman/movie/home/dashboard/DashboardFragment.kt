@@ -31,7 +31,7 @@ import kotlin.collections.ArrayList
 class DashboardFragment : Fragment() {
 
     private lateinit var preferences: Preferences
-    private lateinit var mDatabase: DatabaseReference
+    lateinit var mDatabase: DatabaseReference
 
     private var dataList = ArrayList<Movie>()
 
@@ -43,8 +43,9 @@ class DashboardFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
         preferences = Preferences(requireActivity().applicationContext)
         mDatabase = FirebaseDatabase.getInstance().getReference("Movie")
 
@@ -59,7 +60,7 @@ class DashboardFragment : Fragment() {
             .into(iv_profile)
 
         rv_now_playing.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        rv_coming_soon.layoutManager = LinearLayoutManager(context)
+        rv_coming_soon.layoutManager = LinearLayoutManager(requireContext().applicationContext)
         getData()
     }
 
@@ -68,7 +69,7 @@ class DashboardFragment : Fragment() {
             override fun onDataChange(dataSnapShot: DataSnapshot) {
                 dataList.clear()
                 for (getdataSnapshot in dataSnapShot.children) {
-                    var movie = getdataSnapshot.getValue(Movie::class.java!!)
+                    val movie = getdataSnapshot.getValue(Movie::class.java!!)
                     dataList.add(movie!!)
                 }
 
@@ -100,6 +101,6 @@ class DashboardFragment : Fragment() {
     private fun currency(harga : Double, textView : TextView){
         val localID = Locale("in", "ID")
         val formatRupiah = NumberFormat.getCurrencyInstance(localID)
-        textView.setText(formatRupiah.format(harga))
+        textView.setText(formatRupiah.format(harga as Double))
     }
 }
