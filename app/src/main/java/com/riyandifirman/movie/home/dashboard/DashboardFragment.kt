@@ -49,9 +49,7 @@ class DashboardFragment : Fragment() {
         mDatabase = FirebaseDatabase.getInstance().getReference("Movie")
 
         tv_name.setText(preferences.getValue("name"))
-        if (preferences.getValue("balance").equals("")) {
-            currency(preferences.getValue("balance")!!.toDouble(), tv_balance)
-        } else {
+        if (!preferences.getValue("balance").equals("")) {
             currency(preferences.getValue("balance")!!.toDouble(), tv_balance)
         }
 

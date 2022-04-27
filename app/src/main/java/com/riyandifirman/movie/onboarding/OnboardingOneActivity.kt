@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.riyandifirman.movie.R
 import com.riyandifirman.movie.sign.signin.SignInActivity
 import com.riyandifirman.movie.utils.Preferences
+import kotlinx.android.synthetic.main.activity_onboarding_one.*
 
 
 class OnboardingOneActivity : AppCompatActivity() {
@@ -25,9 +26,6 @@ class OnboardingOneActivity : AppCompatActivity() {
 
             startActivity(Intent(this@OnboardingOneActivity, SignInActivity::class.java))
         }
-
-        val btn_next = findViewById<View>(R.id.btn_next)
-        val btn_skip_intro = findViewById<View>(R.id.btn_skip_intro)
 
         btn_next.setOnClickListener {
             startActivity(Intent(this@OnboardingOneActivity, OnboardingTwoActivity::class.java))

@@ -16,6 +16,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.karumi.dexter.Dexter
@@ -26,8 +27,10 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import com.riyandifirman.movie.home.HomeActivity
 import com.riyandifirman.movie.R
+import com.riyandifirman.movie.sign.signin.User
 import com.riyandifirman.movie.utils.Preferences
 import java.util.*
+import kotlinx.android.synthetic.main.activity_sign_up_photoscreen.*
 
 class SignUpPhotoscreenActivity : AppCompatActivity(), PermissionListener {
 
@@ -39,16 +42,20 @@ class SignUpPhotoscreenActivity : AppCompatActivity(), PermissionListener {
     lateinit var storageReference : StorageReference
     lateinit var preferences: Preferences
 
-    private val tv_hello:TextView
-    get() = findViewById(R.id.tv_hello)
-    private val iv_add:ImageView
-    get() = findViewById(R.id.iv_add)
-    private val iv_profile:ImageView
-    get() = findViewById(R.id.iv_profile)
-    private val btn_save:View
-    get() = findViewById(R.id.btn_save)
-    private val btn_upload_later:View
-    get() = findViewById(R.id.btn_upload_later)
+    lateinit var user : User
+    private lateinit var mFirebaseDatabase: DatabaseReference
+    private lateinit var mFirebaseInstance: FirebaseDatabase
+
+//    private val tv_hello:TextView
+//    get() = findViewById(R.id.tv_hello)
+//    private val iv_add:ImageView
+//    get() = findViewById(R.id.iv_add)
+//    private val iv_profile:ImageView
+//    get() = findViewById(R.id.iv_profile)
+//    private val btn_save:View
+//    get() = findViewById(R.id.btn_save)
+//    private val btn_upload_later:View
+//    get() = findViewById(R.id.btn_upload_later)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,14 +65,17 @@ class SignUpPhotoscreenActivity : AppCompatActivity(), PermissionListener {
         storage = FirebaseStorage.getInstance()
         storageReference = storage.getReference()
 
-        tv_hello.setText("Welcome " + preferences.getValue("name"))
+        mFirebaseInstance = FirebaseDatabase.getInstance()
+        mFirebaseDatabase = mFirebaseInstance.getReference("User")
+
+        user = intent.getParcelableExtra("data")!!
+        tv_hello.setText("Welcome\n"+user.name)
 
         iv_add.setOnClickListener {
             if (statusAdd) {
                 statusAdd = false
-                btn_save.visibility = View.VISIBLE
-                btn_upload_later.visibility = View.VISIBLE
-                iv_add.setImageResource(R.drawable.ic_baseline_delete_forever_24)
+                btn_save.visibility = View.INVISIBLE
+                iv_add.setImageResource(R.drawable.ic_baseline_add_white_24)
                 iv_profile.setImageResource(R.drawable.user_pic)
             } else {
 //                Dexter.withActivity(this)
@@ -86,7 +96,7 @@ class SignUpPhotoscreenActivity : AppCompatActivity(), PermissionListener {
 
         btn_save.setOnClickListener {
             if (filePath != null) {
-                var progressDialog = ProgressDialog(this)
+                val progressDialog = ProgressDialog(this)
                 progressDialog.setTitle("Uploading...")
                 progressDialog.show()
 
@@ -95,13 +105,9 @@ class SignUpPhotoscreenActivity : AppCompatActivity(), PermissionListener {
                     .addOnSuccessListener {
                         progressDialog.dismiss()
                         Toast.makeText(this, "Uploaded", Toast.LENGTH_LONG).show()
-
                         ref.downloadUrl.addOnSuccessListener {
-                            preferences.setValue("url", it.toString())
+                            saveToFirebase(it.toString())
                         }
-
-                        finishAffinity()
-                        startActivity(Intent(this@SignUpPhotoscreenActivity, HomeActivity::class.java))
                     }
 
                     .addOnFailureListener {
@@ -110,21 +116,49 @@ class SignUpPhotoscreenActivity : AppCompatActivity(), PermissionListener {
                     }
 
                     .addOnProgressListener {
-                        taskSnapshot -> var progress = 100.0 * taskSnapshot.bytesTransferred / taskSnapshot.totalByteCount
-                        progressDialog.setMessage("Upload " + progress.toInt() + " %")
+                        taskSnapshot -> val progress = 100.0 * taskSnapshot.bytesTransferred / taskSnapshot.totalByteCount
+                        progressDialog.setMessage("Uploading " + progress.toInt() + " %")
                     }
-            } else {
-                Toast.makeText(this, "Haven't done a photo search yet", Toast.LENGTH_LONG).show()
             }
         }
     }
 
-    override fun onPermissionGranted(response: PermissionGrantedResponse?) {
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-            takePictureIntent.resolveActivity(packageManager)?.also {
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+    private fun saveToFirebase(url: String) {
+        mFirebaseDatabase.child(user.username!!).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                user.url = url
+                mFirebaseDatabase.child(user.username!!).setValue(user)
+
+                preferences.setValue("nama", user.name.toString())
+                preferences.setValue("user", user.username.toString())
+                preferences.setValue("saldo", "")
+                preferences.setValue("url", "")
+                preferences.setValue("email", user.email.toString())
+                preferences.setValue("status", "1")
+                preferences.setValue("url", url)
+
+                finishAffinity()
+                startActivity(Intent(this@SignUpPhotoscreenActivity, HomeActivity::class.java))
+
             }
-        }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@SignUpPhotoscreenActivity, ""+error.message, Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
+    override fun onPermissionGranted(response: PermissionGrantedResponse?) {
+//        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+//            takePictureIntent.resolveActivity(packageManager)?.also {
+//                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+//            }
+//        }
+
+        ImagePicker.with(this)
+            .cameraOnly()
+            .start()
     }
 
     override fun onPermissionDenied(response: PermissionDeniedResponse?) {
@@ -171,10 +205,10 @@ class SignUpPhotoscreenActivity : AppCompatActivity(), PermissionListener {
 
             btn_save.visibility = View.VISIBLE
             iv_add.setImageResource(R.drawable.ic_baseline_delete_forever_24)
-        } else if (resultCode == Activity.RESULT_CANCELED) {
-            Toast.makeText(this, "You haven't done a photo search yet", Toast.LENGTH_LONG).show()
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_LONG).show()
         } else {
-            Toast.makeText(this, "Failed", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Task Cancelled", Toast.LENGTH_LONG).show()
         }
     }
 }

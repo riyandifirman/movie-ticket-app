@@ -11,6 +11,7 @@ import com.riyandifirman.movie.home.HomeActivity
 import com.riyandifirman.movie.R
 import com.riyandifirman.movie.sign.signup.SignUpActivity
 import com.riyandifirman.movie.utils.Preferences
+import kotlinx.android.synthetic.main.activity_sign_in.*
 
 
 class SignInActivity : AppCompatActivity() {
@@ -24,10 +25,6 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        val btn_sign_in = findViewById<View>(R.id.btn_sign_in)
-        val btn_sign_up = findViewById<View>(R.id.btn_sign_up)
-        var inputUsername = findViewById<EditText>(R.id.et_username)
-        var inputPassword = findViewById<EditText>(R.id.et_password)
         mDatabase = FirebaseDatabase.getInstance().getReference("User")
         preference = Preferences(this)
 
@@ -38,23 +35,29 @@ class SignInActivity : AppCompatActivity() {
         }
 
         btn_sign_in.setOnClickListener {
-            iUsername = inputUsername.text.toString()
-            iPassword = inputPassword.text.toString()
+            iUsername = et_username.text.toString()
+            iPassword = et_password.text.toString()
 
             if(iUsername.equals("")){
-                inputUsername.error = "Username is required"
-                inputUsername.requestFocus()
+                et_username.error = "Username is required"
+                et_username.requestFocus()
             } else if(iPassword.equals("")) {
-                inputPassword.error = "Password is required"
-                inputPassword.requestFocus()
+                et_password.error = "Password is required"
+                et_password.requestFocus()
             } else {
-                pushLogin(iUsername, iPassword)
+
+                var statusUsername = iUsername.indexOf(".")
+                if (statusUsername >= 0) {
+                    et_username.error = "Username can't contain dot(.)"
+                    et_username.requestFocus()
+                } else {
+                    pushLogin(iUsername, iPassword)
+                }
             }
         }
 
         btn_sign_up.setOnClickListener {
-            val intent = Intent(this@SignInActivity, SignUpActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@SignInActivity, SignUpActivity::class.java))
         }
     }
 
@@ -72,16 +75,18 @@ class SignInActivity : AppCompatActivity() {
                 } else {
 
                     if (user.password.equals(iPassword)) {
+                        Toast.makeText(this@SignInActivity, "Welcome", Toast.LENGTH_LONG).show()
 
-                    preference.setValue("name", user.name.toString())
-                    preference.setValue("username", user.username.toString())
-                    preference.setValue("url", user.url.toString())
-                    preference.setValue("email", user.email.toString())
-                    preference.setValue("balance", user.balance.toString())
-                    preference.setValue("status", "1")
+                        preference.setValue("name", user.name.toString())
+                        preference.setValue("username", user.username.toString())
+                        preference.setValue("url", user.url.toString())
+                        preference.setValue("email", user.email.toString())
+                        preference.setValue("balance", user.balance.toString())
+                        preference.setValue("status", "1")
 
-                        var intent = Intent(this@SignInActivity, HomeActivity::class.java)
-                        startActivity(intent)
+                        finishAffinity()
+
+                        startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
                     } else {
                         Toast.makeText(this@SignInActivity, "Password is wrong", Toast.LENGTH_LONG).show()
                     }
