@@ -30,7 +30,7 @@ class MyWalletActivity : AppCompatActivity() {
         )
         dataList.add(
             Wallet(
-                "Adventure at Split",
+                "Top Up",
                 "Saturday, January 11, 2022",
                 300000.0,
                 "1"
@@ -39,7 +39,7 @@ class MyWalletActivity : AppCompatActivity() {
         dataList.add(
             Wallet(
                 "Icebox Parody",
-                "Saturday, January 3, 2022",
+                "Saturday, January 4, 2022",
                 70000.0,
                 "0"
             )

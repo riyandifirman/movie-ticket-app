@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@drawable/shape_rectangle_white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_qr"
+        android:layout_width="185dp"
+        android:layout_height="185dp"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/qr_code" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:fontFamily="@font/m_semi_bold"
+        android:gravity="center"
+        android:text="Please do a scan at the\nnearest ticket counter" />
+
+    <Button
+        android:id="@+id/btn_close"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:background="@drawable/shape_rectangle_bluegrey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:fontFamily="@font/m_semi_bold"
+        android:text="CLOSE"
+        app:backgroundTint="@color/colorBlueGrey"/>
+</LinearLayout>

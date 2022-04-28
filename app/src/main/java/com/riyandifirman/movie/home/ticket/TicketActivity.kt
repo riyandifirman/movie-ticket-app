@@ -1,7 +1,13 @@
 package com.riyandifirman.movie.home.ticket
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
+import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.riyandifirman.movie.R
@@ -18,7 +24,7 @@ class TicketActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ticket)
 
-        var data = intent.getParcelableExtra<Movie>("data")
+        val data = intent.getParcelableExtra<Movie>("data")
 
         tv_title.text = data?.title
         tv_genre.text = data?.genre
@@ -39,5 +45,25 @@ class TicketActivity : AppCompatActivity() {
         iv_back.setOnClickListener {
             finish()
         }
+
+        iv_barcode.setOnClickListener {
+            showDialog("Please do a scan at the nearest ticket counter")
+        }
+    }
+
+    private fun showDialog(title: String) {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialog_qr)
+        dialog.getWindow()?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+        val tvDesc = dialog.findViewById(R.id.tv_desc) as TextView
+        tvDesc.text = title
+
+        val btnClose = dialog.findViewById(R.id.btn_close) as Button
+        btnClose.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 }

@@ -15,30 +15,30 @@ import java.util.*
 
 class TicketAdapter(private var data: List<Checkout>,
                     private val listener: (Checkout) -> Unit)
-    : RecyclerView.Adapter<TicketAdapter.ViewHolder>() {
+    : RecyclerView.Adapter<TicketAdapter.LeagueViewHolder>() {
 
     lateinit var contextAdapter: Context
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): TicketAdapter.ViewHolder {
+    ): LeagueViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         contextAdapter = parent.context
-        val inflatedView = layoutInflater.inflate(R.layout.row_item_checkout_white, parent, false)
-        return ViewHolder(inflatedView)
+        val inflatedView: View = layoutInflater.inflate(R.layout.row_item_checkout_white, parent, false)
+        return LeagueViewHolder(inflatedView)
     }
 
-    override fun onBindViewHolder(holder: TicketAdapter.ViewHolder, position: Int) {
-        holder.bindItem(data[position], listener, contextAdapter)
+    override fun onBindViewHolder(holder: LeagueViewHolder, position: Int) {
+        holder.bindItem(data[position], listener, contextAdapter, position)
     }
 
     override fun getItemCount(): Int = data.size
 
-    class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
+    class LeagueViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         private val tvTitle:TextView = view.findViewById(R.id.tv_seat)
 
-        fun bindItem(data:Checkout, listener: (Checkout) -> Unit, context: Context){
+        fun bindItem(data:Checkout, listener: (Checkout) -> Unit, context: Context, position: Int) {
 
             tvTitle.setText("Seat No. ${data.seat}")
 

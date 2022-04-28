@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_ticket.*
 class TicketFragment : Fragment() {
 
     private lateinit var preferences: Preferences
-    private lateinit var mDatabase : DatabaseReference
+    lateinit var mDatabase : DatabaseReference
     private var dataList = ArrayList<Movie>()
 
     override fun onCreateView(
@@ -34,13 +34,13 @@ class TicketFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_ticket, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
-        preferences = Preferences(requireContext())
+        preferences = Preferences(requireContext().applicationContext)
         mDatabase = FirebaseDatabase.getInstance().getReference("Movie")
 
-        rv_ticket.layoutManager = LinearLayoutManager(context)
+        rv_ticket.layoutManager = LinearLayoutManager(requireContext().applicationContext)
         getData()
     }
 
@@ -57,7 +57,7 @@ class TicketFragment : Fragment() {
                     startActivity(Intent(context, TicketActivity::class.java).putExtra("data", it))
                 }
 
-                tv_total.setText("${dataList.size} Movies")
+                tv_total.setText("${dataList.size.toString()} Movies")
             }
 
             override fun onCancelled(error: DatabaseError) {

@@ -30,10 +30,10 @@ class SettingFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_setting, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
-        preferences = Preferences(requireContext())
+        preferences = Preferences(requireContext().applicationContext)
 
         tv_nama.text = preferences.getValue("name")
         tv_email.text = preferences.getValue("email")

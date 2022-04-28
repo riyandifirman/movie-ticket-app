@@ -8,15 +8,13 @@ import com.riyandifirman.movie.R
 import com.riyandifirman.movie.home.dashboard.DashboardFragment
 import com.riyandifirman.movie.home.setting.SettingFragment
 import com.riyandifirman.movie.home.ticket.TicketFragment
+import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val iv_menu1 = findViewById<ImageView>(R.id.iv_menu1)
-        val iv_menu2 = findViewById<ImageView>(R.id.iv_menu2)
-        val iv_menu3 = findViewById<ImageView>(R.id.iv_menu3)
         val fragmentHome = DashboardFragment()
         val fragmentTicket = TicketFragment()
         val fragmentSetting = SettingFragment()

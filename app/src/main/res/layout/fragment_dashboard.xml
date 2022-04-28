@@ -38,12 +38,12 @@
             android:drawablePadding="10dp"
             android:fontFamily="@font/m_medium"
             android:gravity="center_vertical"
+            android:text="Rp0,00"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_name"
-            tools:text="IDR 300.000" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
         <ImageView
             android:id="@+id/iv_profile"

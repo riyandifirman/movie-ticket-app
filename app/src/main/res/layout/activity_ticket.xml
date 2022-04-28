@@ -27,14 +27,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/iv_barcode"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_qr_code_24" />
+        app:srcCompat="@drawable/qr_code" />
 
     <TextView
         android:id="@+id/textView7"
