@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.app.NotificationCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.riyandifirman.movie.R
@@ -16,6 +17,9 @@ import com.riyandifirman.movie.model.Checkout
 import com.riyandifirman.movie.model.Movie
 import com.riyandifirman.movie.utils.Preferences
 import kotlinx.android.synthetic.main.activity_checkout.*
+import java.text.NumberFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class CheckoutActivity : AppCompatActivity() {
 
@@ -35,24 +39,39 @@ class CheckoutActivity : AppCompatActivity() {
             total += dataList[a].price!!.toInt()
         }
 
-        dataList.add(Checkout("Total", total.toString()))
+        dataList.add(Checkout("Total to be paid", total.toString()))
 
         rv_checkout.layoutManager = LinearLayoutManager(this)
         rv_checkout.adapter = CheckoutAdapter(dataList) {
         }
 
-        btn_pay_now.setOnClickListener{
+        btn_pay_now.setOnClickListener {
             startActivity(Intent(this, CheckoutSuccessActivity::class.java))
 
             showNotif(data!!)
         }
 
-        btn_cancel.setOnClickListener{
+        btn_cancel.setOnClickListener {
             startActivity(Intent(this, ChooseSeatActivity::class.java))
         }
 
-        iv_back.setOnClickListener{
+        iv_back.setOnClickListener {
             startActivity(Intent(this, ChooseSeatActivity::class.java))
+        }
+
+        if (preferences.getValue("balance")!!.isNotEmpty()) {
+            val localeID = Locale("in", "ID")
+            val formatRupiah = NumberFormat.getCurrencyInstance(localeID)
+            tv_balance.setText(formatRupiah.format(preferences.getValue("balance")!!.toDouble()))
+            btn_pay_now.visibility = View.VISIBLE
+            tv_alert.visibility = View.INVISIBLE
+
+        } else {
+            tv_balance.setText("Rp0")
+            btn_pay_now.visibility = View.INVISIBLE
+            tv_alert.visibility = View.VISIBLE
+            tv_alert.text = "Insufficient balance in your e-wallet\n" +
+                    "to make a transaction"
         }
     }
 

@@ -15,33 +15,33 @@ import java.util.*
 
 class CheckoutAdapter(private var data: List<Checkout>,
                       private val listener: (Checkout) -> Unit)
-    : RecyclerView.Adapter<CheckoutAdapter.ViewHolder>() {
+    : RecyclerView.Adapter<CheckoutAdapter.LeagueViewHolder>() {
 
     lateinit var contextAdapter: Context
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CheckoutAdapter.ViewHolder {
+    ): LeagueViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         contextAdapter = parent.context
-        val inflatedView = layoutInflater.inflate(R.layout.row_item_checkout, parent, false)
-        return ViewHolder(inflatedView)
+        val inflatedView: View = layoutInflater.inflate(R.layout.row_item_checkout, parent, false)
+        return LeagueViewHolder(inflatedView)
     }
 
-    override fun onBindViewHolder(holder: CheckoutAdapter.ViewHolder, position: Int) {
-        holder.bindItem(data[position], listener, contextAdapter)
+    override fun onBindViewHolder(holder: LeagueViewHolder, position: Int) {
+        holder.bindItem(data[position], listener, contextAdapter, position)
     }
 
     override fun getItemCount(): Int = data.size
 
-    class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
+    class LeagueViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         private val tvTitle:TextView = view.findViewById(R.id.tv_seat)
         private val tvPrice:TextView = view.findViewById(R.id.tv_price)
 
-        fun bindItem(data:Checkout, listener: (Checkout) -> Unit, context: Context){
+        fun bindItem(data:Checkout, listener: (Checkout) -> Unit, context: Context, position: Int) {
 
-            val localID = Locale("id", "ID")
+            val localID = Locale("in", "ID")
             val formatRupiah = NumberFormat.getCurrencyInstance(localID)
             tvPrice.setText(formatRupiah.format(data.price!!.toDouble()))
 

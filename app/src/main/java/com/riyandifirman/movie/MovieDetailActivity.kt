@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.google.firebase.database.*
 import com.riyandifirman.movie.home.dashboard.PlaysAdapter
 import com.riyandifirman.movie.checkout.ChooseSeatActivity
+import com.riyandifirman.movie.home.HomeActivity
 import com.riyandifirman.movie.model.Movie
 import com.riyandifirman.movie.model.Plays
 import kotlinx.android.synthetic.main.activity_movie_detail.*
@@ -45,7 +46,7 @@ class MovieDetailActivity : AppCompatActivity() {
         }
 
         iv_back.setOnClickListener {
-            finish()
+            startActivity(Intent(this@MovieDetailActivity, HomeActivity::class.java))
         }
     }
 

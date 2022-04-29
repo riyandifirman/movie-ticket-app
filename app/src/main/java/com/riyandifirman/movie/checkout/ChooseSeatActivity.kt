@@ -80,7 +80,7 @@ class ChooseSeatActivity : AppCompatActivity() {
         }
 
         iv_back.setOnClickListener{
-            finish()
+            startActivity(Intent(this@ChooseSeatActivity, MovieDetailActivity::class.java))
         }
     }
 
