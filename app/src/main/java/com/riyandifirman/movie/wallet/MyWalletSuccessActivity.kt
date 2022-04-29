@@ -15,7 +15,7 @@ class MyWalletSuccessActivity : AppCompatActivity() {
         btn_home.setOnClickListener {
             finishAffinity()
 
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this@MyWalletSuccessActivity, HomeActivity::class.java))
         }
     }
 }
