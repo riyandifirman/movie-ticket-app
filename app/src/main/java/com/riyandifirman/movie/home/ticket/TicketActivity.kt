@@ -47,7 +47,7 @@ class TicketActivity : AppCompatActivity() {
         }
 
         iv_barcode.setOnClickListener {
-            showDialog("Please do a scan at the nearest ticket counter")
+            showDialog("Please do a scan at the\nnnearest ticket counter")
         }
     }
 

@@ -5,12 +5,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.google.firebase.database.*
 import com.riyandifirman.movie.MovieDetailActivity
 import com.riyandifirman.movie.checkout.CheckoutActivity
 import com.riyandifirman.movie.R
+import com.riyandifirman.movie.home.HomeActivity
+import com.riyandifirman.movie.home.dashboard.ComingSoonAdapter
+import com.riyandifirman.movie.home.dashboard.DashboardFragment
+import com.riyandifirman.movie.home.dashboard.NowPlayingAdapter
 import com.riyandifirman.movie.model.Checkout
 import com.riyandifirman.movie.model.Movie
+import com.riyandifirman.movie.model.Plays
+import com.riyandifirman.movie.utils.Preferences
 import kotlinx.android.synthetic.main.activity_choose_seat.*
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 class ChooseSeatActivity : AppCompatActivity() {
 
@@ -80,7 +92,7 @@ class ChooseSeatActivity : AppCompatActivity() {
         }
 
         iv_back.setOnClickListener{
-            startActivity(Intent(this@ChooseSeatActivity, MovieDetailActivity::class.java))
+            startActivity(Intent(this@ChooseSeatActivity, HomeActivity::class.java))
         }
     }
 

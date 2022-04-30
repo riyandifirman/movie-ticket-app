@@ -11,16 +11,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
         android:drawableLeft="@drawable/ic_baseline_event_seat_24"
         android:drawablePadding="10dp"
-        android:fontFamily="@font/m_regular"
+        android:fontFamily="@font/m_semi_bold"
         android:gravity="center"
         android:text="Seat no C1"
         android:textColor="@color/colorBlue"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
